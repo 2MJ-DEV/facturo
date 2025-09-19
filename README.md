@@ -28,7 +28,7 @@ cd facturo
 
 ### 2. Installer les dépendances
 ```bash
-npm install
+pnpm install
 ```
 ### 3. Configurer les variables d’environnement
 Créer un fichier .env à la racine :
@@ -41,7 +41,7 @@ EMAIL_PASS=ton_mot_de_passe
 ```
 ### 4. Lancer le projet en développement
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 ## 📂 Structure du projet
