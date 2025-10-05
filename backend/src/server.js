@@ -13,6 +13,23 @@ import auditRouter from './routes/audit.js';
 import usersRouter from './routes/users.js';
 
 const app = express();
+const allowedOrigins = [
+  "https://facturo-delta.vercel.app",
+  "http://localhost:5173",       
+];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 
 // Middleware
 app.use(cors({ origin: true, credentials: true }));
